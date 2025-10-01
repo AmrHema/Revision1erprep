@@ -1,0 +1,154 @@
+/* إعادة تعيين الأنماط الأساسية والخطوط */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f7f7fa; /* خلفية فاتحة عصرية */
+    color: #333;
+    line-height: 1.6;
+    text-align: right;
+    direction: rtl;
+}
+
+/* تنسيق رأس الصفحة (Header) */
+header {
+    background-color: #e53935; /* لون أحمر جذاب (مميز) */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+/* تنسيق الجسم الرئيسي (Main) */
+main {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* تنسيق عناوين الفئات الرئيسية */
+.category-title {
+    font-size: 2em;
+    margin: 40px 0 20px;
+    padding: 10px 15px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nouns { background-color: #ff9800; /* برتقالي للأسماء */ }
+.verbs { background-color: #4caf50; /* أخضر للأفعال */ }
+.expressions { background-color: #2196f3; /* أزرق للتعابير */ }
+
+/* تنسيق الشبكات الفرعية (للأسماء) */
+.sub-category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.group-title {
+    font-size: 1.4em;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 3px solid;
+}
+
+.masculine { color: #4CAF50; border-color: #4CAF50; }
+.feminine { color: #E91E63; border-color: #E91E63; }
+
+/* تنسيق شبكة الكلمات الرئيسية */
+.word-grid {
+    display: grid;
+    /* 3 أعمدة على الأجهزة الكبيرة */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+/* تنسيق بطاقة الكلمة (Card) */
+.word-card {
+    background-color: white;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+    cursor: pointer;
+    border-right: 6px solid #e53935; /* شريط جانبي مميز */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.word-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-right-width: 10px;
+}
+
+/* تنسيق الكلمة الفرنسية */
+.french-word {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+    direction: ltr; /* لعرض الفرنسية بشكل صحيح */
+    text-align: left;
+}
+
+/* تنسيق الترجمة العربية */
+.arabic-translation {
+    font-size: 1.1em;
+    color: #555;
+    padding-top: 8px;
+    border-top: 1px dotted #ccc;
+}
+
+/* تنسيق ذيل الصفحة (Footer) */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* استجابة الهاتف (Mobile Responsiveness) */
+@media (max-width: 992px) {
+    .sub-category-grid {
+        /* تحويل إلى عمود واحد على الأجهزة الصغيرة */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .word-grid {
+        /* عمودان على شاشات الهاتف اللوحي */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .word-grid {
+        /* عمود واحد على شاشات الهاتف الصغيرة جداً */
+        grid-template-columns: 1fr;
+    }
+}
